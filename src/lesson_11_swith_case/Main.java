@@ -4,26 +4,23 @@ public class Main {
 
     static void main () {
 
-        char grade = 'F';
+        String day = "7";
 
-        switch (grade) {
-            case 'A':
-                System.out.println("Відмінно!");
-                break;
-            case 'B':
-                System.out.println("Добре В");
-                break;
-            case 'C':
-                System.out.println("Добре");
-                break;
-            case 'D':
-                System.out.println("Зараховано");
-                break;
-            case 'F':
-                System.out.println("Спробуй ще");
-                break;
-            default:
-                System.out.println("Неправильна оцінка");
-        }
+        String result = switch (day) {
+            case "1" -> "Понеділок";
+            case "2" -> "Вівторок";
+            case "3" -> "Середа";
+            case "4" -> "Четвер";
+            case "5" -> "П'ятниця";
+            case "6" -> "Субота";
+            case "7" -> {
+                String dayName = "Неділя";
+                int dayLength = dayName.length();
+                yield String.valueOf(dayLength); // конвертація int -> String щоб показати dayLength
+            }
+            default -> "Wrong day";
+
+        };
+        System.out.println(result);
     }
 }
