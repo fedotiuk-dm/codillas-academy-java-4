@@ -2,7 +2,7 @@ package lesson_11_swith_case;
 
 public class Main {
 
-    static void main () {
+    static void main() {
 
         String day = "7";
 
