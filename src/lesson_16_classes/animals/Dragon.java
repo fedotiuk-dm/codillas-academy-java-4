@@ -7,11 +7,11 @@ public class Dragon {
     private double weight;
 
     public Dragon() {
-        System.out.println("Викликаємо конструктор без параметрів");
+        System.out.println("Створено невідомого дракона");
     }
 
     public Dragon(String name, int age, double weight) {
-        System.out.println("Виклик конструктора з параметрами");
+        System.out.println("Створено повноцінного дракона");
 
         this.name = name;
         this.age = age;
