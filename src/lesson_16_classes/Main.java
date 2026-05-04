@@ -14,7 +14,7 @@ public class Main {
         System.out.println("Вік дракона: " + drako.getAge());
         System.out.println("Вага дракона: " + drako.getWeight());
 
-        Dragon drag = new Dragon("Drak", 12, 123.44);
+        Dragon drag = new Dragon("Drag", 12, 123.44);
 
         System.out.println("Ім'я дракона: " + drag.getName());
         System.out.println("Вік дракона: " + drag.getAge());
