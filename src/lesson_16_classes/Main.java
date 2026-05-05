@@ -27,11 +27,17 @@ public class Main {
         System.out.println("Дракон випускає вогонь: " + drag.getFire());
 
         //task 6:
-        Dragon[] dragons = new Dragon[3];
-
         Scanner console = new Scanner(System.in);
 
+        System.out.println("Скільки драконів створити?");
+        int choice = console.nextInt();
+        console.nextLine();
+
+        Dragon[] dragons = new Dragon[choice];
+
         for (int i = 0; i < dragons.length; i++) {
+            System.out.println("Скільки драконів створити?");
+
             System.out.println("Введіть ім'я дракона: ");
             String name = console.nextLine();
 
@@ -54,5 +60,6 @@ public class Main {
         for (int i = 0; i < dragons.length; i++) {
             System.out.println(dragons[i]);
         }
+        console.close();
     }
 }
