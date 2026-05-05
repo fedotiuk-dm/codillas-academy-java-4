@@ -5,17 +5,21 @@ public class Dragon {
     private String name;
     private int age;
     private double weight;
+    private String voice;
+    private String fire;
 
     public Dragon() {
         System.out.println("Створено невідомого дракона");
     }
 
-    public Dragon(String name, int age, double weight) {
+    public Dragon(String name, int age, double weight, String voice, String fire) {
         System.out.println("Створено повноцінного дракона");
 
         this.name = name;
         this.age = age;
         this.weight = weight;
+        this.voice = voice;
+        this.fire = fire;
 
     }
 
@@ -41,5 +45,32 @@ public class Dragon {
 
     public void setWeight(double weight) {
         this.weight = weight;
+    }
+
+    public String getVoice() {
+        return voice;
+    }
+
+    public void setVoice(String voice) {
+        this.voice = voice;
+    }
+
+    public String getFire() {
+        return fire;
+    }
+
+    public void setFire(String fire) {
+        this.fire = fire;
+    }
+
+    @Override
+    public String toString() {
+        return "Dragon{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", weight=" + weight +
+                ", voice='" + voice + '\'' +
+                ", fire='" + fire + '\'' +
+                '}';
     }
 }

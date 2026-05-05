@@ -11,16 +11,20 @@ public class Main {
         drako.setName("Drago");
         drako.setAge(30);
         drako.setWeight(123.57);
+        drako.setVoice("Blablabalbalbalbalbalabl");
+        drako.setFire("Fireeeeeeeeeeee!");
 
         System.out.println("Ім'я дракона: " + drako.getName());
         System.out.println("Вік дракона: " + drako.getAge());
         System.out.println("Вага дракона: " + drako.getWeight());
 
-        Dragon drag = new Dragon("Drag", 12, 123.44);
+        Dragon drag = new Dragon("Drag", 12, 123.44, null, null);
 
         System.out.println("Ім'я дракона: " + drag.getName());
         System.out.println("Вік дракона: " + drag.getAge());
         System.out.println("Вага дракона: " + drag.getWeight());
+        System.out.println("Дракон каже: " + drag.getVoice());
+        System.out.println("Дракон випускає вогонь: " + drag.getFire());
 
         //task 6:
         Dragon[] dragons = new Dragon[3];
@@ -29,21 +33,26 @@ public class Main {
 
         for (int i = 0; i < dragons.length; i++) {
             System.out.println("Введіть ім'я дракона: ");
-            String name = console.next();
+            String name = console.nextLine();
 
             System.out.println("Введіть вік дракона: ");
             int age = console.nextInt();
 
             System.out.println("Введіть вагу дракона: ");
             double weight = console.nextDouble();
-            dragons[i] = new Dragon(name, age, weight);
+            console.nextLine();
+
+            System.out.println("Дракон може сказати: ");
+            String voice = console.nextLine();
+
+            System.out.println("Дракон може випускати вогонь: ");
+            String fire = console.nextLine();
+
+            dragons[i] = new Dragon(name, age, weight, voice, fire);
         }
 
         for (int i = 0; i < dragons.length; i++) {
-            System.out.println("Дракон: " +
-                    "Імя дракона: " + dragons[i].getName() + ", " +
-                    "Вік дракона: " + dragons[i].getAge() + ", " +
-                    "Вага дракона: " + dragons[i].getWeight());
+            System.out.println(dragons[i]);
         }
     }
 }
