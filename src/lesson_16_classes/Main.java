@@ -33,6 +33,11 @@ public class Main {
         int choice = console.nextInt();
         console.nextLine();
 
+        if (choice > 3) {
+            System.out.println("Максимум можна створити 3 дракони");
+            choice = 3;
+        }
+
         Dragon[] dragons = new Dragon[choice];
 
         for (int i = 0; i < dragons.length; i++) {
