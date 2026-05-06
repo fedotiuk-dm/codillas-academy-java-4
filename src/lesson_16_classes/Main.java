@@ -51,8 +51,10 @@ public class Main {
 
             BreedType[] breedTypes = BreedType.values();
 
-            for (int j = 0; j < breedTypes.length; j++) {
-                System.out.println((j + 1) + ", " + breedTypes[j]);
+            int number = 1;
+            for (BreedType type : breedTypes) {
+                System.out.println(number + ". " + type);
+                number++;
             }
 
             int breedChoice = console.nextInt();
@@ -60,7 +62,7 @@ public class Main {
 
             // validation
             if (breedChoice < 1 || breedChoice > breedTypes.length) {
-                System.out.println("Невірний вибір. Буде встановлено породу" + breedTypes[0]);
+                System.out.println("Невірний вибір. Буде встановлено породу " + breedTypes[0]);
                 breedChoice = 1;
             }
 
