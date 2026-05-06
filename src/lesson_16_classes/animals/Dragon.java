@@ -7,12 +7,13 @@ public class Dragon {
     private double weight;
     private String voice;
     private String fire;
+    private BreedType breedType;
 
     public Dragon() {
         System.out.println("Створено невідомого дракона");
     }
 
-    public Dragon(String name, int age, double weight, String voice, String fire) {
+    public Dragon(String name, int age, double weight, String voice, String fire, BreedType breedType) {
         System.out.println("Створено повноцінного дракона");
 
         this.name = name;
@@ -20,6 +21,7 @@ public class Dragon {
         this.weight = weight;
         this.voice = voice;
         this.fire = fire;
+        this.breedType = breedType;
 
     }
 
@@ -63,6 +65,14 @@ public class Dragon {
         this.fire = fire;
     }
 
+    public BreedType getBreed() {
+        return breedType;
+    }
+
+    public void setBreed(BreedType breedType) {
+        this.breedType = breedType;
+    }
+
     @Override
     public String toString() {
         return "Dragon{" +
@@ -71,6 +81,7 @@ public class Dragon {
                 ", weight=" + weight +
                 ", voice='" + voice + '\'' +
                 ", fire='" + fire + '\'' +
+                ", breed=" + breedType +
                 '}';
     }
 }
