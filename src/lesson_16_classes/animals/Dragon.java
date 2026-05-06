@@ -81,7 +81,7 @@ public class Dragon {
                 ", weight=" + weight +
                 ", voice='" + voice + '\'' +
                 ", fire='" + fire + '\'' +
-                ", breed=" + breedType +
+                ", breedType=" + breedType +
                 '}';
     }
 }
