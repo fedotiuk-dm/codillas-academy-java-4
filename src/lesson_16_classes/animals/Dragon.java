@@ -65,11 +65,11 @@ public class Dragon {
         this.fire = fire;
     }
 
-    public BreedType getBreed() {
+    public BreedType getBreedType() {
         return breedType;
     }
 
-    public void setBreed(BreedType breedType) {
+    public void setBreedType(BreedType breedType) {
         this.breedType = breedType;
     }
 

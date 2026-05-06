@@ -14,7 +14,7 @@ public class Main {
         drako.setWeight(123.57);
         drako.setVoice("Blablabalbalbalbalbalabl");
         drako.setFire("Fireeeeeeeeeeee!");
-        drako.setBreed(BreedType.DRABON);
+        drako.setBreedType(BreedType.DRABON);
 
         System.out.println("Ім'я дракона: " + drako.getName());
         System.out.println("Вік дракона: " + drako.getAge());
@@ -27,7 +27,7 @@ public class Main {
         System.out.println("Вага дракона: " + drag.getWeight());
         System.out.println("Дракон каже: " + drag.getVoice());
         System.out.println("Дракон випускає вогонь: " + drag.getFire());
-        System.out.println("Порода дракона буде: " + drag.getBreed());
+        System.out.println("Порода дракона буде: " + drag.getBreedType());
 
         //task 6:
         Scanner console = new Scanner(System.in);
