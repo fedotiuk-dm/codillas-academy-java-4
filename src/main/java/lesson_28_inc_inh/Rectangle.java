@@ -16,10 +16,16 @@ public class Rectangle extends Shape {
     }
 
     @Override
+    public double calculatePerimeter() {
+        return 2 * (width + height);
+    }
+
+    @Override
     public void displayInfo() {
         System.out.println("Тип фігури: прямокутник");
         System.out.println("Ширина: " + width);
         System.out.println("Висота: " + height);
         System.out.println("Площа: " + calculateArea());
+        System.out.println("Периметр: " + calculatePerimeter());
     }
 }

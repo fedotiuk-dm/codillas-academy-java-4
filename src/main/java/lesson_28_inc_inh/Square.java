@@ -11,5 +11,6 @@ public class Square extends Rectangle {
         System.out.println("Тип фігури: квадрат");
         System.out.println("Сторона: " + width);
         System.out.println("Площа: " + calculateArea());
+        System.out.println("Периметр: " + calculatePerimeter());
     }
 }
