@@ -15,8 +15,7 @@ public class Stack implements Stackable {
     @Override
     public void addElementToStack(int element) {
         if (isFull()) {
-            System.out.println("Стек повний. Неможливо додати елемент: " + element);
-            return;
+            throw new StackFullException(element);
         }
         stackArray[++top] = element;
     }
@@ -24,8 +23,7 @@ public class Stack implements Stackable {
     @Override
     public int deleteElementFromStack() {
         if (isEmpty()) {
-            System.out.println("Стек порожній: Неможливо дістати елемент: " + top);
-            return -1;
+            throw new StackEmptyException();
         }
         return stackArray[top--];
     }
@@ -33,8 +31,7 @@ public class Stack implements Stackable {
     @Override
     public int readTop() {
         if (isEmpty()) {
-            System.out.println("Стек порожній. Немає верхнього елемента: " + top);
-            return -1;
+            throw new StackEmptyException();
         }
         return stackArray[top];
     }
