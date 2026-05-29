@@ -12,7 +12,11 @@ public class Main {
 
         System.out.println("Верхній елемент: " + theStack.readTop());
 
-        theStack.addElementToStack(100);
+        try {
+            theStack.addElementToStack(100);
+        } catch (StackFullException exception) {
+            System.out.println(exception.getMessage());
+        }
 
         System.out.print("Наш стек: ");
         while (!theStack.isEmpty()) {
@@ -21,6 +25,10 @@ public class Main {
         }
         System.out.println();
 
-        theStack.deleteElementFromStack();
+        try {
+            theStack.deleteElementFromStack();
+        } catch (StackEmptyException exception) {
+            System.out.println(exception.getMessage());
+        }
     }
 }
