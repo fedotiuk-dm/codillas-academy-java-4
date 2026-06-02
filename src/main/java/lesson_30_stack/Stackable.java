@@ -1,5 +1,7 @@
 package lesson_30_stack;
 
+import java.util.Optional;
+
 public interface Stackable {
 
     boolean isEmpty();
@@ -9,6 +11,8 @@ public interface Stackable {
     void addElementToStack(int element);
 
     int deleteElementFromStack();
+
+    Optional<Integer> deleteElementFromStackOptional();
 
     int readTop();
 }

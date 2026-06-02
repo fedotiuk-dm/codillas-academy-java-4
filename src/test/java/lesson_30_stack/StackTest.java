@@ -55,6 +55,30 @@ class StackTest {
     }
 
     @Nested
+    @DisplayName("deleteElementFromStackOptional()")
+    class DeleteElementFromStackOptional {
+
+        @Test
+        @DisplayName("should return top element and remove it when stack is not empty")
+        void shouldReturnTopElementAndRemoveItWhenStackIsNotEmpty() {
+            Stack stack = new Stack(2);
+            stack.addElementToStack(89);
+            stack.addElementToStack(69);
+
+            assertThat(stack.deleteElementFromStackOptional()).contains(69);
+            assertThat(stack.readTop()).isEqualTo(89);
+        }
+
+        @Test
+        @DisplayName("should return empty optional when stack is empty")
+        void shouldReturnEmptyOptionalWhenStackIsEmpty() {
+            Stack stack = new Stack(1);
+
+            assertThat(stack.deleteElementFromStackOptional()).isEmpty();
+        }
+    }
+
+    @Nested
     @DisplayName("readTop()")
     class ReadTop {
 

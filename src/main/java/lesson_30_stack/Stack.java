@@ -1,5 +1,7 @@
 package lesson_30_stack;
 
+import java.util.Optional;
+
 public class Stack implements Stackable {
 
     private final int maxSize;
@@ -26,6 +28,15 @@ public class Stack implements Stackable {
             throw new StackEmptyException();
         }
         return stackArray[top--];
+    }
+
+    @Override
+    public Optional<Integer> deleteElementFromStackOptional() {
+        if (isEmpty()) {
+            return Optional.empty();
+        }
+        //повертаємо примітив, тому ofNullable не потрібно
+        return Optional.of(deleteElementFromStack());
     }
 
     @Override
