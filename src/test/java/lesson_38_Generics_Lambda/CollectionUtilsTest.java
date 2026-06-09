@@ -32,6 +32,16 @@ class CollectionUtilsTest {
     }
 
     @Test
+    @DisplayName("should keep only first occurrence of every number with lambda")
+    void shouldKeepOnlyFirstOccurrenceOfEveryNumberWithLambda() {
+        List<Integer> numbers = List.of(3, 2, 4, 2, 3, 4, 5, 6);
+
+        List<Integer> uniqueNumbers = CollectionUtils.keepFirstOccurrencesWithLambda(numbers);
+
+        assertThat(uniqueNumbers).containsExactly(3, 2, 4, 5, 6);
+    }
+
+    @Test
     @DisplayName("should merge maps and sum values for repeated keys")
     void shouldMergeMapsAndSumValuesForRepeatedKeys() {
         Map<String, Integer> firstMap = new LinkedHashMap<>();
@@ -43,6 +53,26 @@ class CollectionUtilsTest {
         secondMap.put("c", 3);
 
         Map<String, Integer> mergedMap = CollectionUtils.mergeMaps(firstMap, secondMap);
+
+        assertThat(mergedMap)
+                .containsEntry("a", 3)
+                .containsEntry("b", 2)
+                .containsEntry("c", 7)
+                .hasSize(3);
+    }
+
+    @Test
+    @DisplayName("should merge maps and sum values for repeated keys with lambda")
+    void shouldMergeMapsAndSumValuesForRepeatedKeysWithLambda() {
+        Map<String, Integer> firstMap = new LinkedHashMap<>();
+        firstMap.put("a", 3);
+        firstMap.put("c", 4);
+
+        Map<String, Integer> secondMap = new LinkedHashMap<>();
+        secondMap.put("b", 2);
+        secondMap.put("c", 3);
+
+        Map<String, Integer> mergedMap = CollectionUtils.mergeMapsWithLambda(firstMap, secondMap);
 
         assertThat(mergedMap)
                 .containsEntry("a", 3)

@@ -9,9 +9,11 @@ public class Main {
     public static void main() {
         List<Integer> numbers = List.of(3, 2, 4, 2, 3, 4, 5, 6);
         List<Integer> uniqueNumbers = CollectionUtils.keepFirstOccurrences(numbers);
+        List<Integer> uniqueNumbersWithLambda = CollectionUtils.keepFirstOccurrencesWithLambda(numbers);
 
         System.out.println("Original numbers: " + numbers);
         System.out.println("Unique numbers: " + uniqueNumbers);
+        System.out.println("Unique numbers with lambda: " + uniqueNumbersWithLambda);
 
         Map<String, Integer> firstMap = new LinkedHashMap<>();
         firstMap.put("a", 3);
@@ -22,9 +24,11 @@ public class Main {
         secondMap.put("c", 3);
 
         Map<String, Integer> mergedMap = CollectionUtils.mergeMaps(firstMap, secondMap);
+        Map<String, Integer> mergedMapWithLambda = CollectionUtils.mergeMapsWithLambda(firstMap, secondMap);
 
         System.out.println("First map: " + firstMap);
         System.out.println("Second map: " + secondMap);
         System.out.println("Merged map: " + mergedMap);
+        System.out.println("Merged map with lambda: " + mergedMapWithLambda);
     }
 }
