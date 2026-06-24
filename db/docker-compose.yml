@@ -1,0 +1,22 @@
+services:
+  postgres-hw:
+    image: postgres:18.4-alpine3.23
+    container_name: postgres-hw
+    environment:
+      POSTGRES_DB: postgres-hw
+      POSTGRES_USER: postgres-hw
+      POSTGRES_PASSWORD: postgres-hw
+    ports:
+      - "55432:5432"
+    volumes:
+      - postgres-hw-data:/var/lib/postgresql
+      - ./homework_54.sql:/docker-entrypoint-initdb.d/homework_54.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres-hw -d postgres-hw"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    restart: unless-stopped
+
+volumes:
+  postgres-hw-data:
