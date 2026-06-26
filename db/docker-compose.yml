@@ -10,7 +10,7 @@ services:
       - "55432:5432"
     volumes:
       - postgres-hw-data:/var/lib/postgresql
-      - ./homework_54.sql:/docker-entrypoint-initdb.d/homework_54.sql:ro
+      - ./:/docker-entrypoint-initdb.d:ro
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U postgres-hw -d postgres-hw"]
       interval: 5s
