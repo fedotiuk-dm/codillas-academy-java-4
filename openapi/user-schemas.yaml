@@ -1,0 +1,51 @@
+openapi: 3.0.4
+info:
+  title: Codillas User schemas
+  version: 0.2.0
+paths: {}
+components:
+  schemas:
+    UserProfile:
+      type: object
+      required:
+        - userId
+        - displayName
+      properties:
+        userId:
+          type: string
+          format: uuid
+        displayName:
+          type: string
+        bio:
+          type: string
+        roles:
+          type: array
+          description: The user's platform roles (e.g. ADMIN, TEACHER, STUDENT). Populated on /api/users/me; omitted in list results.
+          items:
+            type: string
+        createdAt:
+          type: string
+          format: date-time
+    UserProfileListResponse:
+      allOf:
+        - $ref: "common.yaml#/components/schemas/PageResponse"
+        - type: object
+          required:
+            - content
+          properties:
+            content:
+              type: array
+              items:
+                $ref: "#/components/schemas/UserProfile"
+    UpdateProfileRequest:
+      type: object
+      required:
+        - displayName
+      properties:
+        displayName:
+          type: string
+          minLength: 1
+          maxLength: 100
+        bio:
+          type: string
+          maxLength: 500
