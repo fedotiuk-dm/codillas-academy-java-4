@@ -1,0 +1,180 @@
+openapi: 3.0.4
+info:
+  title: Codillas Enrollment schemas
+  version: 0.3.0
+paths: {}
+components:
+  schemas:
+    GroupStatus:
+      type: string
+      description: DRAFT is being set up; RUNNING is an active cohort; ARCHIVED is historical (read-only).
+      enum:
+        - DRAFT
+        - RUNNING
+        - ARCHIVED
+    GroupResponse:
+      type: object
+      required:
+        - id
+        - name
+        - courseId
+        - teacherId
+        - status
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+          minLength: 1
+          maxLength: 200
+        courseId:
+          type: string
+          format: uuid
+        teacherId:
+          type: string
+          format: uuid
+        status:
+          $ref: "#/components/schemas/GroupStatus"
+        startDate:
+          type: string
+          format: date
+        createdAt:
+          type: string
+          format: date-time
+    CreateGroupRequest:
+      type: object
+      required:
+        - name
+        - courseId
+        - teacherId
+      properties:
+        name:
+          type: string
+          minLength: 1
+          maxLength: 200
+        courseId:
+          type: string
+          format: uuid
+        teacherId:
+          type: string
+          format: uuid
+        startDate:
+          type: string
+          format: date
+    GroupListResponse:
+      allOf:
+        - $ref: "common.yaml#/components/schemas/PageResponse"
+        - type: object
+          required:
+            - content
+          properties:
+            content:
+              type: array
+              items:
+                $ref: "#/components/schemas/GroupResponse"
+    EnrollStudentRequest:
+      type: object
+      required:
+        - userId
+      properties:
+        userId:
+          type: string
+          format: uuid
+    MembershipResponse:
+      type: object
+      required:
+        - id
+        - groupId
+        - userId
+      properties:
+        id:
+          type: string
+          format: uuid
+        groupId:
+          type: string
+          format: uuid
+        userId:
+          type: string
+          format: uuid
+        enrolledAt:
+          type: string
+          format: date-time
+    ScheduleLessonRequest:
+      type: object
+      required:
+        - title
+        - scheduledAt
+      properties:
+        title:
+          type: string
+          minLength: 1
+          maxLength: 200
+        scheduledAt:
+          type: string
+          format: date-time
+        meetLink:
+          type: string
+        lessonId:
+          type: string
+          format: uuid
+          description: Optional course lesson this session runs (by id; the course module owns it).
+    ScheduledLessonResponse:
+      type: object
+      required:
+        - id
+        - groupId
+        - title
+        - scheduledAt
+      properties:
+        id:
+          type: string
+          format: uuid
+        groupId:
+          type: string
+          format: uuid
+        title:
+          type: string
+        scheduledAt:
+          type: string
+          format: date-time
+        meetLink:
+          type: string
+        recordingUrl:
+          type: string
+        lessonId:
+          type: string
+          format: uuid
+        createdAt:
+          type: string
+          format: date-time
+    MarkAttendanceRequest:
+      type: object
+      required:
+        - userId
+        - present
+      properties:
+        userId:
+          type: string
+          format: uuid
+        present:
+          type: boolean
+    AttendanceResponse:
+      type: object
+      required:
+        - id
+        - scheduledLessonId
+        - userId
+        - present
+      properties:
+        id:
+          type: string
+          format: uuid
+        scheduledLessonId:
+          type: string
+          format: uuid
+        userId:
+          type: string
+          format: uuid
+        present:
+          type: boolean
