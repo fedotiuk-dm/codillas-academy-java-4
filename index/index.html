@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student registration form">
+    <title>Student Registration Form</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  </head>
+  <body>
+    <header>
+      <h1>Student Registration Form</h1>
+    </header>
+
+    <main>
+      <form action="#" method="post">
+        <p>
+          <label for="full-name">Full Name:</label>
+          <input id="full-name" name="fullName" type="text" autocomplete="name" required>
+        </p>
+
+        <p>
+          <label for="email">Email:</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </p>
+
+        <p>
+          <label for="password">Password:</label>
+          <input id="password" name="password" type="password" autocomplete="new-password" required>
+        </p>
+
+        <p>
+          <label for="age">Age:</label>
+          <input id="age" name="age" type="number" min="1" max="120">
+        </p>
+
+        <p>
+          <label for="date-of-birth">Date of Birth:</label>
+          <input id="date-of-birth" name="dateOfBirth" type="date">
+        </p>
+
+        <fieldset>
+          <legend>Gender:</legend>
+
+          <label>
+            <input name="gender" type="radio" value="male">
+            Male
+          </label>
+
+          <label>
+            <input name="gender" type="radio" value="female">
+            Female
+          </label>
+
+          <label>
+            <input name="gender" type="radio" value="other">
+            Other
+          </label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Interests:</legend>
+
+          <label>
+            <input name="interests" type="checkbox" value="sports">
+            Sports
+          </label>
+
+          <label>
+            <input name="interests" type="checkbox" value="music">
+            Music
+          </label>
+
+          <label>
+            <input name="interests" type="checkbox" value="reading">
+            Reading
+          </label>
+        </fieldset>
+
+        <p>
+          <label for="country">Country:</label>
+          <select id="country" name="country">
+            <option value="us">United States</option>
+            <option value="ua">Ukraine</option>
+            <option value="de">Germany</option>
+            <option value="pl">Poland</option>
+            <option value="other">Other</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="short-bio">Short Bio:</label>
+          <textarea id="short-bio" name="shortBio" rows="6" cols="40"></textarea>
+        </p>
+
+        <p>
+          <button type="submit">Submit</button>
+          <button type="reset">Reset</button>
+        </p>
+      </form>
+    </main>
+
+    <footer>
+      <small>&copy; 2026 Student Registration</small>
+    </footer>
+  </body>
+</html>
