@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Проста гра Вгадай число">
+    <title>Вгадай число</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="game">
+      <p class="game__icon" aria-hidden="true">?</p>
+      <h1>Вгадай число</h1>
+      <p>Я загадав число від 0 до 9. Спробуй його вгадати!</p>
+
+      <form id="guess-form">
+        <label for="guess">Твій варіант</label>
+        <div class="controls">
+          <input id="guess" name="guess" type="number" min="0" max="9" required autofocus>
+          <button type="submit">Перевірити</button>
+        </div>
+      </form>
+
+      <p id="message" class="message" aria-live="polite">Введи число та натисни кнопку.</p>
+      <p class="attempts">Кількість спроб: <span id="attempts">0</span></p>
+
+      <button id="restart" class="restart" type="button" hidden>Нова гра</button>
+    </main>
+  </body>
+</html>
