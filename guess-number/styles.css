@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  color: #253238;
+  background: #eaf4ec;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.game {
+  width: min(100%, 440px);
+  padding: 36px;
+  background: white;
+  border-radius: 18px;
+  box-shadow: 0 14px 35px rgb(37 50 56 / 14%);
+  text-align: center;
+}
+
+.game__icon {
+  display: flex;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 18px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: #6db33f;
+  border-radius: 50%;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+h1 {
+  margin: 0 0 10px;
+}
+
+form {
+  margin-top: 28px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+}
+
+input,
+button {
+  min-height: 46px;
+  border-radius: 9px;
+  font: inherit;
+}
+
+input {
+  width: 90px;
+  padding: 8px 12px;
+  border: 2px solid #cdd8d0;
+  font-size: 1.1rem;
+}
+
+input:focus {
+  border-color: #6db33f;
+  outline: 3px solid rgb(109 179 63 / 20%);
+}
+
+button {
+  flex: 1;
+  padding: 10px 18px;
+  color: white;
+  background: #3f7f24;
+  border: 0;
+  cursor: pointer;
+  font-weight: 700;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: #2f6519;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+.message {
+  min-height: 28px;
+  margin: 24px 0 6px;
+  padding: 12px;
+  background: #f3f7f4;
+  border-radius: 9px;
+  font-weight: 700;
+}
+
+.message--success {
+  color: #286317;
+  background: #e2f3d9;
+}
+
+.message--hint {
+  color: #805400;
+  background: #fff3cf;
+}
+
+.message--error {
+  color: #9b2525;
+  background: #fde4e4;
+}
+
+.attempts {
+  margin-bottom: 0;
+  color: #647168;
+}
+
+.restart {
+  width: 100%;
+  margin-top: 18px;
+}
+
+@media (max-width: 480px) {
+  .game {
+    padding: 28px 20px;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  input {
+    width: 100%;
+  }
+}
