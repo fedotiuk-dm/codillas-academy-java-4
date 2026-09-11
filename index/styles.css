@@ -1,0 +1,294 @@
+:root {
+  --green: #6db33f;
+  --green-dark: #3f7f24;
+  --ink: #213127;
+  --muted: #66726a;
+  --paper: #ffffff;
+  --background: #eef3ef;
+  --line: #dce7de;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--green-dark);
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+a:hover {
+  color: var(--ink);
+  transform: translateX(4px);
+}
+
+.cv {
+  width: min(1100px, calc(100% - 40px));
+  margin: 40px auto 20px;
+  overflow: hidden;
+  background: var(--paper);
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgb(33 49 39 / 12%);
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 48px;
+  color: white;
+  background: var(--ink);
+}
+
+.hero__text {
+  max-width: 720px;
+}
+
+.eyebrow {
+  margin: 0 0 4px;
+  color: #a6d787;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 4px;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 1.05;
+}
+
+.job-title {
+  margin-bottom: 18px;
+  color: #a6d787;
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.intro {
+  margin-bottom: 0;
+  color: #e3eae5;
+}
+
+.hero__logo {
+  width: 150px;
+  height: auto;
+  flex: 0 0 auto;
+  filter: drop-shadow(0 8px 12px rgb(0 0 0 / 20%));
+  transition: transform 0.25s ease;
+}
+
+.hero__logo:hover {
+  transform: rotate(5deg) scale(1.05);
+}
+
+.cv__layout {
+  display: flex;
+  align-items: stretch;
+}
+
+.sidebar {
+  display: flex;
+  width: 34%;
+  flex-direction: column;
+  gap: 30px;
+  padding: 38px;
+  background: #f5f9f5;
+}
+
+.content {
+  display: flex;
+  width: 66%;
+  flex-direction: column;
+  gap: 32px;
+  padding: 38px 44px;
+}
+
+h2 {
+  margin-bottom: 18px;
+  padding-bottom: 7px;
+  border-bottom: 3px solid var(--green);
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-style: normal;
+  overflow-wrap: anywhere;
+}
+
+.contact-list a {
+  width: fit-content;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags span {
+  padding: 5px 10px;
+  color: var(--green-dark);
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.86rem;
+  transition: color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.tags span:hover {
+  color: white;
+  background: var(--green-dark);
+  transform: translateY(-2px);
+}
+
+.simple-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.simple-list li + li {
+  margin-top: 6px;
+}
+
+.entry {
+  padding: 0 0 22px 18px;
+  border-left: 3px solid var(--line);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.entry:hover {
+  border-left-color: var(--green);
+  transform: translateX(5px);
+}
+
+.entry + .entry {
+  margin-top: 22px;
+}
+
+.entry--compact {
+  padding-bottom: 8px;
+}
+
+.entry__heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.entry h3 {
+  margin-bottom: 2px;
+  font-size: 1.08rem;
+}
+
+.entry p {
+  margin-bottom: 0;
+  color: var(--muted);
+}
+
+.entry__heading p {
+  color: var(--green-dark);
+  font-weight: 700;
+}
+
+time {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+footer {
+  padding: 0 20px 24px;
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .cv {
+    width: min(100% - 24px, 620px);
+    margin-top: 12px;
+  }
+
+  .hero {
+    padding: 34px 28px;
+  }
+
+  .hero__logo {
+    width: 105px;
+  }
+
+  .cv__layout {
+    flex-direction: column;
+  }
+
+  .sidebar,
+  .content {
+    width: 100%;
+    padding: 30px 28px;
+  }
+
+  .sidebar {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .entry__heading {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  h1 {
+    font-size: 2.35rem;
+  }
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .cv {
+    width: 100%;
+    margin: 0;
+    box-shadow: none;
+  }
+
+  .entry,
+  .tags span,
+  a,
+  .hero__logo {
+    transition: none;
+  }
+}
