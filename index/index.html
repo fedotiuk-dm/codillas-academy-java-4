@@ -1,107 +1,170 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Student registration form">
-    <title>Student Registration Form</title>
+    <meta
+      name="description"
+      content="Lebenslauf von Dmytro Fedotiuk, Full-Stack Entwickler mit Schwerpunkt Java und Spring Boot."
+    >
+    <title>Dmytro Fedotiuk | CV</title>
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <header>
-      <h1>Student Registration Form</h1>
-    </header>
+    <main class="cv">
+      <header class="hero">
+        <div class="hero__text">
+          <p class="eyebrow">Lebenslauf</p>
+          <h1>Dmytro Fedotiuk</h1>
+          <p class="job-title">Full-Stack Entwickler</p>
+          <p class="intro">
+            Full-Stack-Entwickler mit Backend-Fokus auf Java, Spring Boot, PostgreSQL und
+            API-First-Entwicklung. Praktische Frontend-Erfahrung mit React, Next.js und
+            TypeScript.
+          </p>
+        </div>
 
-    <main>
-      <form action="#" method="post">
-        <p>
-          <label for="full-name">Full Name:</label>
-          <input id="full-name" name="fullName" type="text" autocomplete="name" required>
-        </p>
+        <img
+          class="hero__logo"
+          src="springboot.svg"
+          alt="Spring Boot Logo"
+          width="190"
+          height="170"
+        >
+      </header>
 
-        <p>
-          <label for="email">Email:</label>
-          <input id="email" name="email" type="email" autocomplete="email" required>
-        </p>
+      <div class="cv__layout">
+        <aside class="sidebar">
+          <section>
+            <h2>Kontakt</h2>
+            <address class="contact-list">
+              <a href="mailto:fedotiukdm@gmail.com">fedotiukdm@gmail.com</a>
+              <a href="tel:+4915226952485">+49 1522 6952485</a>
+              <span>Freiberg, Deutschland</span>
+              <a href="https://github.com/fedotiuk-dm">GitHub</a>
+              <a href="https://linkedin.com/in/fedotiukdm">LinkedIn</a>
+            </address>
+          </section>
 
-        <p>
-          <label for="password">Password:</label>
-          <input id="password" name="password" type="password" autocomplete="new-password" required>
-        </p>
+          <section>
+            <h2>Technologien</h2>
+            <div class="tags">
+              <span>Java</span>
+              <span>Spring Boot</span>
+              <span>PostgreSQL</span>
+              <span>OpenAPI</span>
+              <span>Hibernate</span>
+              <span>Docker</span>
+              <span>Next.js</span>
+              <span>React</span>
+              <span>TypeScript</span>
+              <span>Keycloak</span>
+            </div>
+          </section>
 
-        <p>
-          <label for="age">Age:</label>
-          <input id="age" name="age" type="number" min="1" max="120">
-        </p>
+          <section>
+            <h2>Sprachen</h2>
+            <ul class="simple-list">
+              <li>Ukrainisch — Muttersprache</li>
+              <li>Russisch — Muttersprache</li>
+              <li>Englisch — B2</li>
+              <li>Deutsch — B1</li>
+              <li>Polnisch — B1</li>
+            </ul>
+          </section>
+        </aside>
 
-        <p>
-          <label for="date-of-birth">Date of Birth:</label>
-          <input id="date-of-birth" name="dateOfBirth" type="date">
-        </p>
+        <div class="content">
+          <section>
+            <h2>Berufserfahrung</h2>
 
-        <fieldset>
-          <legend>Gender:</legend>
+            <article class="entry">
+              <div class="entry__heading">
+                <div>
+                  <h3>Full-Stack Entwickler</h3>
+                  <p>AKSI Bestellverwaltungssystem</p>
+                </div>
+                <time>2024 — heute</time>
+              </div>
+              <p>
+                Entwicklung eines produktiv eingesetzten Bestellsystems als modularer Monolith
+                mit Spring Boot, Next.js, OpenAPI, PostgreSQL und Keycloak.
+              </p>
+            </article>
 
-          <label>
-            <input name="gender" type="radio" value="male">
-            Male
-          </label>
+            <article class="entry">
+              <div class="entry__heading">
+                <div>
+                  <h3>Full-Stack Entwickler</h3>
+                  <p>Game Boosting Marketplace</p>
+                </div>
+                <time>2025 — heute</time>
+              </div>
+              <p>
+                Entwicklung einer Marketplace-Plattform mit Preisberechnung, Chat,
+                Authentifizierung sowie Stripe-, PayPal- und Coinbase-Integrationen.
+              </p>
+            </article>
 
-          <label>
-            <input name="gender" type="radio" value="female">
-            Female
-          </label>
+            <article class="entry">
+              <div class="entry__heading">
+                <div>
+                  <h3>Java Backend Entwickler</h3>
+                  <p>Coffeetamine Social-Discovery-MVP</p>
+                </div>
+                <time>2026 — heute</time>
+              </div>
+              <p>
+                Backend-MVP mit Spring Boot, DDD-Modulen, OIDC, RabbitMQ und
+                privacy-first Geo-Discovery.
+              </p>
+            </article>
 
-          <label>
-            <input name="gender" type="radio" value="other">
-            Other
-          </label>
-        </fieldset>
+            <article class="entry">
+              <div class="entry__heading">
+                <div>
+                  <h3>Technical Project Manager</h3>
+                  <p>Brainlab, Webcapitan, Quarzwerke GmbH</p>
+                </div>
+                <time>2019 — 2024</time>
+              </div>
+              <p>
+                Koordination internationaler Web-Projekte, technische Dokumentation,
+                Release-Planung und Leitung eines 25-köpfigen Delivery-Teams.
+              </p>
+            </article>
+          </section>
 
-        <fieldset>
-          <legend>Interests:</legend>
+          <section>
+            <h2>Ausbildung</h2>
 
-          <label>
-            <input name="interests" type="checkbox" value="sports">
-            Sports
-          </label>
+            <article class="entry entry--compact">
+              <div class="entry__heading">
+                <div>
+                  <h3>Informationstechnologie</h3>
+                  <p>Akademia Ekonomiczno-Humanistyczna w Warszawie</p>
+                </div>
+                <time>2016 — 2018</time>
+              </div>
+            </article>
 
-          <label>
-            <input name="interests" type="checkbox" value="music">
-            Music
-          </label>
-
-          <label>
-            <input name="interests" type="checkbox" value="reading">
-            Reading
-          </label>
-        </fieldset>
-
-        <p>
-          <label for="country">Country:</label>
-          <select id="country" name="country">
-            <option value="us">United States</option>
-            <option value="ua">Ukraine</option>
-            <option value="de">Germany</option>
-            <option value="pl">Poland</option>
-            <option value="other">Other</option>
-          </select>
-        </p>
-
-        <p>
-          <label for="short-bio">Short Bio:</label>
-          <textarea id="short-bio" name="shortBio" rows="6" cols="40"></textarea>
-        </p>
-
-        <p>
-          <button type="submit">Submit</button>
-          <button type="reset">Reset</button>
-        </p>
-      </form>
+            <article class="entry entry--compact">
+              <div class="entry__heading">
+                <div>
+                  <h3>Bachelor, Kraftfahrzeug- und Computersystemtechnik</h3>
+                  <p>Militärakademie Odesa</p>
+                </div>
+                <time>2011 — 2016</time>
+              </div>
+            </article>
+          </section>
+        </div>
+      </div>
     </main>
 
     <footer>
-      <small>&copy; 2026 Student Registration</small>
+      <small>&copy; 2026 Dmytro Fedotiuk</small>
     </footer>
   </body>
 </html>
